@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.10.35122.118
+VisualStudioVersion = 17.12.35728.132 d17.12
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MultApps.Windows", "MultApps.Windows\MultApps.Windows.csproj", "{FAFF4F60-0965-44BB-A624-40919E5C2DFE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MultApps.Windows", "MultApps.Windows\MultApps.Windows.csproj", "{01CD2565-CF8F-4CD5-B1CC-7040E65E260F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,12 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{FAFF4F60-0965-44BB-A624-40919E5C2DFE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{FAFF4F60-0965-44BB-A624-40919E5C2DFE}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{FAFF4F60-0965-44BB-A624-40919E5C2DFE}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{FAFF4F60-0965-44BB-A624-40919E5C2DFE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{01CD2565-CF8F-4CD5-B1CC-7040E65E260F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{01CD2565-CF8F-4CD5-B1CC-7040E65E260F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{01CD2565-CF8F-4CD5-B1CC-7040E65E260F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{01CD2565-CF8F-4CD5-B1CC-7040E65E260F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {18BE3460-61E0-4591-902F-6A50636CC513}
 	EndGlobalSection
 EndGlobal
