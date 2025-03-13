@@ -45,13 +45,16 @@
             this.chkCrianca = new System.Windows.Forms.CheckBox();
             this.chkAdulto = new System.Windows.Forms.CheckBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.picBoxImc = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.cmbIdade.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxImc)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.picBoxImc);
             this.panel1.Controls.Add(this.lblResultadoImc);
             this.panel1.Controls.Add(this.btnCalcular);
             this.panel1.Controls.Add(this.cmbIdade);
@@ -275,6 +278,14 @@
             this.label1.Text = "Selecione";
             this.label1.UseWaitCursor = true;
             // 
+            // picBoxImc
+            // 
+            this.picBoxImc.Location = new System.Drawing.Point(833, 194);
+            this.picBoxImc.Name = "picBoxImc";
+            this.picBoxImc.Size = new System.Drawing.Size(345, 442);
+            this.picBoxImc.TabIndex = 10;
+            this.picBoxImc.TabStop = false;
+            // 
             // FrmCalculadoraIMC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
@@ -290,6 +301,7 @@
             this.panel1.PerformLayout();
             this.cmbIdade.ResumeLayout(false);
             this.cmbIdade.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxImc)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -313,5 +325,6 @@
         private System.Windows.Forms.TextBox txtPeso;
         private System.Windows.Forms.Button btnCalcular;
         private System.Windows.Forms.Label lblResultadoImc;
+        private System.Windows.Forms.PictureBox picBoxImc;
     }
 }

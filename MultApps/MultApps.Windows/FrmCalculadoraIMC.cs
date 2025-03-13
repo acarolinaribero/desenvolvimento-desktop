@@ -42,10 +42,8 @@ namespace MultApps.Windows
             chkMasculino.ForeColor = Color.DarkOrange;
             chkCrianca.ForeColor = Color.Gray;
             chkCrianca.Checked = false;
-            lblIdade.Text = "Acima de 19 anos";
-            cmbIdade.Visible = false;
-            lblIdade.Visible = false;
-        }
+        }  
+
 
         private void chkFeminino_CheckedChanged(object sender, EventArgs e)
         {
@@ -59,7 +57,8 @@ namespace MultApps.Windows
         {
             if (chkAdulto.Checked && chkMasculino.Checked)
             {
-                #region 
+                #region Adulto Masculino
+
                 var peso = double.Parse(txtPeso.Text);
                 var altura = double.Parse(txtAltura.Text);
 
@@ -67,7 +66,57 @@ namespace MultApps.Windows
                 var textobase = $@"Meu IMC: {imc:N2} é:";
 
 
+                lblResultadoImc.Text = imc.ToString("N2");
 
+                if (imc <= 18.5)
+                {
+                    lblResultadoImc.Text = $@"Seu IMC: {imc:N2} é abaixo do normal";
+                    picBoxImc.Load(ImcImagem.MasculinoAbaixoDoPesoNormal);
+
+                }
+                else if (imc < 24.9)
+                {
+                    lblResultadoImc.Text = $@"Seu IMC: {imc:N2} é normal";
+                    picBoxImc.Load(ImcImagem.MasculinoPesoNormal);
+                }
+                else if (imc < 29.9)
+                {
+                    lblResultadoImc.Text = $@"Seu IMC: {imc:N2} é sobrepeso";
+                    picBoxImc.Load(ImcImagem.MasculinoSobrepeso);
+
+                }
+                else if (imc < 34.9)
+                {
+                    lblResultadoImc.Text = $@"Seu IMC: {imc:N2} é obesidade grau 1";
+                    picBoxImc.Load(ImcImagem.MasculinoObesidadeGrau1);
+
+                }
+                else if (imc < 39.9)
+                {
+                    lblResultadoImc.Text = $@"Seu IMC: {imc:N2} é obesidade grau 2";
+                    picBoxImc.Load(ImcImagem.MasculinoObesidadeGrau2);
+
+                }
+                else
+                {
+                    lblResultadoImc.Text = $@"Seu IMC: {imc:N2} é obesidade grau 3";
+                    picBoxImc.Load(ImcImagem.MasculinoObesidadeGrau3);
+
+                }
+
+               
+                #endregion
+  
+
+            }
+
+            if (chkAdulto.Checked && chkFeminino.Checked)
+            {
+                var peso = double.Parse(txtPeso.Text);
+                var altura = double.Parse(txtAltura.Text);
+
+                var imc = peso / (altura * altura);
+                var textobase = $@"Meu IMC: {imc:N2} é:";
 
 
                 lblResultadoImc.Text = imc.ToString("N2");
@@ -75,61 +124,41 @@ namespace MultApps.Windows
                 if (imc <= 18.5)
                 {
                     lblResultadoImc.Text = $@"Seu IMC: {imc:N2} é abaixo do normal";
+                    picBoxImc.Load(ImcImagem.FemininoAbaixoDoPesoNormal);
 
                 }
                 else if (imc < 24.9)
                 {
                     lblResultadoImc.Text = $@"Seu IMC: {imc:N2} é normal";
+                    picBoxImc.Load(ImcImagem.FemininoPesoNormal);
                 }
                 else if (imc < 29.9)
                 {
                     lblResultadoImc.Text = $@"Seu IMC: {imc:N2} é sobrepeso";
+                    picBoxImc.Load(ImcImagem.FemininoSobrepeso);
 
                 }
                 else if (imc < 34.9)
                 {
                     lblResultadoImc.Text = $@"Seu IMC: {imc:N2} é obesidade grau 1";
+                    picBoxImc.Load(ImcImagem.FemininoObesidadeGrau1);
 
                 }
                 else if (imc < 39.9)
                 {
                     lblResultadoImc.Text = $@"Seu IMC: {imc:N2} é obesidade grau 2";
+                    picBoxImc.Load(ImcImagem.MasculinoObesidadeGrau2);
 
                 }
                 else
                 {
                     lblResultadoImc.Text = $@"Seu IMC: {imc:N2} é obesidade grau 3";
+                    picBoxImc.Load(ImcImagem.MasculinoObesidadeGrau3);
 
                 }
-
-                #endregion
-
-
-
-
             }
         }
-        private string ManipuladorDeImagem(string grau)
-        {
-            switch(grau)
-            {
-                case "abaixo do normal":
-                    return "https://abeso.org.br/wp-content/uploads/2019/12/imc_c_04.png.webp";
-                case "normal":
-                    return "https://abeso.org.br/wp-content/uploads/2019/12/imc_c_03.png.webp";
-                case "sobrepeso":
-                    return "https://abeso.org.br/wp-content/uploads/2019/12/imc_c_02.png.webp";
-                case "obesidade grau 1":
-                    return "https://abeso.org.br/wp-content/uploads/2019/12/imc_m_03.png.webp";
-                case "obesidade grau 2":
-                    return "https://abeso.org.br/wp-content/uploads/2019/12/imc_m_02.png.webp";
-                case "obesidade grau 3":
-                    return "https://abeso.org.br/wp-content/uploads/2019/12/imc_m_01.png.webp";
-
-                default:""
-            }
-
-        }
+     
     }
 }
 
