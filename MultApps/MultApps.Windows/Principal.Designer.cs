@@ -40,7 +40,7 @@
             this.calculadorasToolStripMenuItem});
             this.menuStripPrincipal.Location = new System.Drawing.Point(0, 0);
             this.menuStripPrincipal.Name = "menuStripPrincipal";
-            this.menuStripPrincipal.Size = new System.Drawing.Size(800, 24);
+            this.menuStripPrincipal.Size = new System.Drawing.Size(765, 24);
             this.menuStripPrincipal.TabIndex = 0;
             this.menuStripPrincipal.Text = "menuStrip1";
             // 
@@ -55,7 +55,7 @@
             // MeunuCalculadoraImc
             // 
             this.MeunuCalculadoraImc.Name = "MeunuCalculadoraImc";
-            this.MeunuCalculadoraImc.Size = new System.Drawing.Size(180, 22);
+            this.MeunuCalculadoraImc.Size = new System.Drawing.Size(162, 22);
             this.MeunuCalculadoraImc.Text = "Calculadora IMC";
             this.MeunuCalculadoraImc.Click += new System.EventHandler(this.MeunuCalculadoraImc_Click);
             // 
@@ -64,11 +64,18 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.BackgroundImage = global::MultApps.Windows.Properties.Resources.Captura_de_tela_2025_03_13_211640;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(765, 495);
             this.Controls.Add(this.menuStripPrincipal);
+            this.DoubleBuffered = true;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MainMenuStrip = this.menuStripPrincipal;
             this.Name = "Principal";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Principal";
+            this.Load += new System.EventHandler(this.Principal_Load);
+            this.Shown += new System.EventHandler(this.Principal_Shown);
             this.menuStripPrincipal.ResumeLayout(false);
             this.menuStripPrincipal.PerformLayout();
             this.ResumeLayout(false);
