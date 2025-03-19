@@ -30,12 +30,15 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtNome = new System.Windows.Forms.TextBox();
+            this.txtCpf = new System.Windows.Forms.TextBox();
+            this.txtDataNascimento = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.panelResultado = new System.Windows.Forms.Panel();
+            this.btnGerarCarteirinha = new System.Windows.Forms.Button();
+            this.lblResultado = new System.Windows.Forms.Label();
+            this.panelResultado.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -58,26 +61,26 @@
             this.label2.TabIndex = 1;
             this.label2.Text = "Nome";
             // 
-            // textBox1
+            // txtNome
             // 
-            this.textBox1.Location = new System.Drawing.Point(61, 127);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 2;
+            this.txtNome.Location = new System.Drawing.Point(61, 127);
+            this.txtNome.Name = "txtNome";
+            this.txtNome.Size = new System.Drawing.Size(100, 20);
+            this.txtNome.TabIndex = 2;
             // 
-            // textBox2
+            // txtCpf
             // 
-            this.textBox2.Location = new System.Drawing.Point(61, 217);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 3;
+            this.txtCpf.Location = new System.Drawing.Point(61, 217);
+            this.txtCpf.Name = "txtCpf";
+            this.txtCpf.Size = new System.Drawing.Size(100, 20);
+            this.txtCpf.TabIndex = 3;
             // 
-            // textBox3
+            // txtDataNascimento
             // 
-            this.textBox3.Location = new System.Drawing.Point(61, 307);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 20);
-            this.textBox3.TabIndex = 4;
+            this.txtDataNascimento.Location = new System.Drawing.Point(61, 307);
+            this.txtDataNascimento.Name = "txtDataNascimento";
+            this.txtDataNascimento.Size = new System.Drawing.Size(100, 20);
+            this.txtDataNascimento.TabIndex = 4;
             // 
             // label3
             // 
@@ -99,29 +102,51 @@
             this.label4.TabIndex = 6;
             this.label4.Text = "Data de nascimento";
             // 
-            // panel1
+            // panelResultado
             // 
-            this.panel1.Location = new System.Drawing.Point(485, 76);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(254, 284);
-            this.panel1.TabIndex = 7;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            this.panelResultado.Controls.Add(this.lblResultado);
+            this.panelResultado.Location = new System.Drawing.Point(485, 76);
+            this.panelResultado.Name = "panelResultado";
+            this.panelResultado.Size = new System.Drawing.Size(254, 284);
+            this.panelResultado.TabIndex = 7;
+            this.panelResultado.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // btnGerarCarteirinha
+            // 
+            this.btnGerarCarteirinha.Location = new System.Drawing.Point(257, 359);
+            this.btnGerarCarteirinha.Name = "btnGerarCarteirinha";
+            this.btnGerarCarteirinha.Size = new System.Drawing.Size(75, 23);
+            this.btnGerarCarteirinha.TabIndex = 8;
+            this.btnGerarCarteirinha.Text = "Gerar";
+            this.btnGerarCarteirinha.UseVisualStyleBackColor = true;
+            this.btnGerarCarteirinha.Click += new System.EventHandler(this.btnGerarCarteirinha_Click);
+            // 
+            // lblResultado
+            // 
+            this.lblResultado.Location = new System.Drawing.Point(76, 15);
+            this.lblResultado.Name = "lblResultado";
+            this.lblResultado.Size = new System.Drawing.Size(100, 23);
+            this.lblResultado.TabIndex = 0;
+            this.lblResultado.Text = "resultado";
+            this.lblResultado.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // AppDeCarteirinha
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(782, 409);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.btnGerarCarteirinha);
+            this.Controls.Add(this.panelResultado);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtDataNascimento);
+            this.Controls.Add(this.txtCpf);
+            this.Controls.Add(this.txtNome);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "AppDeCarteirinha";
             this.Text = "AppDeCarteirinhas";
+            this.panelResultado.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -131,11 +156,13 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtNome;
+        private System.Windows.Forms.TextBox txtCpf;
+        private System.Windows.Forms.TextBox txtDataNascimento;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panelResultado;
+        private System.Windows.Forms.Button btnGerarCarteirinha;
+        private System.Windows.Forms.Label lblResultado;
     }
 }
