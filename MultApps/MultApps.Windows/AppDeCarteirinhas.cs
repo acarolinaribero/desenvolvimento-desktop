@@ -1,13 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Net.Mime.MediaTypeNames;
 
 namespace MultApps.Windows
 {
@@ -18,56 +11,66 @@ namespace MultApps.Windows
             InitializeComponent();
         }
 
-        private void panel1_Paint(object sender, PaintEventArgs e)
+      
+
+        private void pictureBox1_Click(object sender, EventArgs e)
         {
-         
-        }
+             lblResultadoNome.Text = txtNome.Text;
 
-        private void btnGerarCarteirinha_Click(object sender, EventArgs e)
-        {
-            string nome = txtNome.Text;
-            int idade = int.Parse(txtDataNascimento.Text);
-            string cpf = txtCpf.Text;
+            var datanascimento = DateTime.Parse(txtDataDeNascimento.Text);
+            var dataanual = DateTime.Now.Year;
+            var idade = dataanual;
 
-            string carteirinha = CriarCarteirinha(nome, idade, cpf);
+            lblResultadoIdade.Text = txtDataDeNascimento.Text;
 
-            lblResultado.Text = carteirinha;
-
-            if (idade <= 12)
-                panelResultado.BackColor = Color.Blue;
-
-
-            else if (idade >= 60)
-                panelResultado.BackColor = Color.Green;
-
-
-            else if (idade >= 13 && idade <= 25)
-                panelResultado.BackColor = Color.Yellow;
-
-
-            else
-                panelResultado.BackColor = Color.Purple;
-
-
-        }
-
-        private string CriarCarteirinha(string nome, int idade, string cpf)
-        {
-            string cpfOfuscado = OfuscarCpf(cpf);
-
-            return $"Nome: {nome}\nIdade: {idade}\nCPF: {cpfOfuscado}";
-        }
-
-        private string OfuscarCpf(string cpf)
-        {
-            if (cpf.Length == 11)
+            var texoriginal = txtCPF.Text;
+            var texoculto = OcultarTexto(texoriginal);
+            lblResultadoCPF.Text = texoculto;
+            if (idade < 12)
             {
-                return $"***.{cpf.Substring(3, 3)}.{cpf.Substring(6, 3)}-**";
+                lblCarteirinha.Load("https://cdn-icons-png.flaticon.com/512/3886/3886660.png");
+
+                lblCarteirinha.Text = "Carteirinha azul";
+                lblCarteirinha.ForeColor = Color.Blue;
+
+            }
+            else if (idade > 18)
+            {
+                lblCarteirinha.Load("https://cdn-icons-png.flaticon.com/512/3886/3886660.png");
+
+                lblCarteirinha.Text = "Carteirinha amarela";
+                lblCarteirinha.ForeColor = Color.Yellow;
+
+            }
+            else if (idade > 60)
+            {
+                lblCarteirinha.Load("https://img.lovepik.com/png/20231123/man-and-woman-with-face-icons-vector-behance-hd-ui_674344_wh860.png");
+
+                lblCarteirinha.Text = "Carteirinha roxa";
+                lblCarteirinha.ForeColor = Color.Purple;
+
             }
             else
             {
-                return "CPF inválido.";
+                lblCarteirinha.Load("https://cdn-icons-png.freepik.com/512/1761/1761366.png");
+
+                lblCarteirinha.Text = "Carteirinha verde";
+                lblCarteirinha.ForeColor = Color.Green;
+
             }
+
+        }
+        static string OcultarTexto(string texto)
+        {
+            string partevisivel = texto.Substring(6, 3);
+
+            return texto.Substring(0, 3) + ".*.*" + partevisivel;
+        }
+
+        private void lblResultadoIdade_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
+
