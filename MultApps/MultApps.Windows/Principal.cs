@@ -30,22 +30,10 @@ namespace MultApps.Windows
 
         }
 
-        private void Principal_Shown(object sender, EventArgs e)
-        {
-            this.Refresh();
-            for (int i = 0; i < 101; i++)
-            {
-                progressBar1.Value = i;
-                Thread.Sleep(40);
-            }
-            progressBar1.Value = 99;
-            Thread.Sleep(500);
 
-            this.Close();
-        }
         private void MDIPrincipal_Shown(object sender, EventArgs e)
         {
-            var loading = new SplashScreen();
+            var loading = new FrmSplashScreen();
             loading.ShowDialog();
         }
     }
