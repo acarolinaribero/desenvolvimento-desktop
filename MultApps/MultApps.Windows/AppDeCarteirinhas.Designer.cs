@@ -36,11 +36,11 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.panelResultado = new System.Windows.Forms.Panel();
-            this.lblCarteirinha = new System.Windows.Forms.PictureBox();
             this.lblResultadoNome = new System.Windows.Forms.Label();
             this.btnGerarCarteirinha = new System.Windows.Forms.Button();
             this.lblResultadoCPF = new System.Windows.Forms.Label();
             this.lblResultadoIdade = new System.Windows.Forms.Label();
+            this.lblCarteirinha = new System.Windows.Forms.PictureBox();
             this.panelResultado.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.lblCarteirinha)).BeginInit();
             this.SuspendLayout();
@@ -115,51 +115,52 @@
             this.panelResultado.Size = new System.Drawing.Size(254, 284);
             this.panelResultado.TabIndex = 7;
             // 
-            // lblCarteirinha
-            // 
-            this.lblCarteirinha.Location = new System.Drawing.Point(16, 15);
-            this.lblCarteirinha.Name = "lblCarteirinha";
-            this.lblCarteirinha.Size = new System.Drawing.Size(224, 248);
-            this.lblCarteirinha.TabIndex = 1;
-            this.lblCarteirinha.TabStop = false;
-            this.lblCarteirinha.Click += new System.EventHandler(this.pictureBox1_Click);
-            // 
             // lblResultadoNome
             // 
-            this.lblResultadoNome.Location = new System.Drawing.Point(267, 108);
+            this.lblResultadoNome.Location = new System.Drawing.Point(482, 414);
             this.lblResultadoNome.Name = "lblResultadoNome";
             this.lblResultadoNome.Size = new System.Drawing.Size(100, 23);
             this.lblResultadoNome.TabIndex = 0;
-            this.lblResultadoNome.Text = "resultado";
             this.lblResultadoNome.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btnGerarCarteirinha
             // 
-            this.btnGerarCarteirinha.Location = new System.Drawing.Point(257, 359);
+            this.btnGerarCarteirinha.BackColor = System.Drawing.Color.DarkGreen;
+            this.btnGerarCarteirinha.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGerarCarteirinha.Location = new System.Drawing.Point(114, 405);
             this.btnGerarCarteirinha.Name = "btnGerarCarteirinha";
-            this.btnGerarCarteirinha.Size = new System.Drawing.Size(75, 23);
+            this.btnGerarCarteirinha.Size = new System.Drawing.Size(197, 35);
             this.btnGerarCarteirinha.TabIndex = 8;
             this.btnGerarCarteirinha.Text = "Gerar";
-            this.btnGerarCarteirinha.UseVisualStyleBackColor = true;
+            this.btnGerarCarteirinha.UseVisualStyleBackColor = false;
+            this.btnGerarCarteirinha.Click += new System.EventHandler(this.btnGerarCarteirinha_Click);
             // 
             // lblResultadoCPF
             // 
             this.lblResultadoCPF.AutoSize = true;
             this.lblResultadoCPF.Location = new System.Drawing.Point(501, 384);
             this.lblResultadoCPF.Name = "lblResultadoCPF";
-            this.lblResultadoCPF.Size = new System.Drawing.Size(35, 13);
+            this.lblResultadoCPF.Size = new System.Drawing.Size(0, 13);
             this.lblResultadoCPF.TabIndex = 9;
-            this.lblResultadoCPF.Text = "label2";
             // 
             // lblResultadoIdade
             // 
             this.lblResultadoIdade.AutoSize = true;
             this.lblResultadoIdade.Location = new System.Drawing.Point(498, 440);
             this.lblResultadoIdade.Name = "lblResultadoIdade";
-            this.lblResultadoIdade.Size = new System.Drawing.Size(35, 13);
+            this.lblResultadoIdade.Size = new System.Drawing.Size(0, 13);
             this.lblResultadoIdade.TabIndex = 10;
-            this.lblResultadoIdade.Text = "label2";
             this.lblResultadoIdade.Click += new System.EventHandler(this.lblResultadoIdade_Click);
+            // 
+            // lblCarteirinha
+            // 
+            this.lblCarteirinha.Location = new System.Drawing.Point(16, 15);
+            this.lblCarteirinha.Name = "lblCarteirinha";
+            this.lblCarteirinha.Size = new System.Drawing.Size(224, 248);
+            this.lblCarteirinha.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.lblCarteirinha.TabIndex = 1;
+            this.lblCarteirinha.TabStop = false;
+            this.lblCarteirinha.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // AppDeCarteirinha
             // 
